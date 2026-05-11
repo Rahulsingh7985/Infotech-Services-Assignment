@@ -37,8 +37,6 @@ body{
     width:100px;
 }
 
-/* FIX 2: Removed orphaned .logo h2 rule — no <h2> exists inside .logo in the HTML */
-
 .nav-links{
     display:flex;
     align-items:center;
@@ -51,10 +49,20 @@ body{
     color:#111;
     font-size:16px;
     font-weight:500;
+
+    /* Icons hidden on desktop — flex only activates on mobile */
+    display:flex;
+    align-items:center;
+    gap:0;                  /* no gap on desktop */
 }
 
 .nav-links .active{
     color:#4d5ce3;
+}
+
+/* ── Nav icon: hidden on desktop ── */
+.nav-icon{
+    display:none;           /* completely hidden on desktop / laptop */
 }
 
 .contact-btn{
@@ -202,10 +210,7 @@ body{
 
 .about-section{
     width:100%;
-
-    /* FIX 4: Changed height to min-height so content is never clipped on short viewports */
     min-height:100vh;
-
     padding:40px 80px;
     overflow:hidden;
     display:flex;
@@ -331,7 +336,6 @@ body{
     width:34px;
 }
 
-/* FIX 1 & 3: Styled close-btn as a proper button and hidden by default */
 .close-btn{
     display:none;
     background:none;
@@ -344,6 +348,39 @@ body{
     align-self:flex-end;
 }
 
+/* Mobile logo inside the slide-out menu — hidden on desktop */
+.mobile-menu-logo{
+    display:none;
+}
+
+/* Mobile Contact Us button inside menu — hidden on desktop */
+.mobile-contact-item{
+    width:100%;
+    margin-top:10px;
+    display:none;
+}
+
+.mobile-menu-contact-btn{
+    width:100%;
+    background:#4d5ce3;
+    color:white;
+    border:none;
+    padding:16px 22px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.mobile-menu-contact-btn img{
+    width:20px;
+    filter:brightness(0) invert(1);
+}
+
 
 /* TABLET */
 
@@ -352,7 +389,6 @@ body{
     .hero-section{
         flex-direction:column;
         text-align:center;
-
         height:auto;
         padding:40px 30px;
     }
@@ -366,7 +402,6 @@ body{
     }
 
     .about-section{
-        /* FIX 4: Consistent min-height at tablet breakpoint too */
         min-height:auto;
         padding:40px 30px;
     }
@@ -389,7 +424,6 @@ body{
         font-size:34px;
     }
 }
-
 
 
 /* MOBILE */
@@ -420,50 +454,86 @@ body{
 
     .nav-links{
         position:fixed;
-
         top:0;
         right:-100%;
-
         width:100%;
         height:100vh;
-
         background:#f7f7fb;
-
         flex-direction:column;
         justify-content:flex-start;
         align-items:flex-start;
-
-        padding:120px 40px;
-
-        gap:45px;
-
+        padding:30px 30px 40px;
+        gap:0;
         transition:0.4s;
-
         z-index:999;
+        overflow-y:auto;
     }
 
     .nav-links.active{
         right:0;
     }
 
+    /* Logo row inside mobile menu */
+    .mobile-menu-logo{
+        display:flex;
+        align-items:center;
+        width:100%;
+        margin-bottom:32px;
+        margin-top:8px;
+    }
+
+    .mobile-menu-logo img{
+        width:120px;
+    }
+
     .nav-links li{
         width:100%;
+        border-bottom:1px solid #e8e8f0;
+    }
+
+    .nav-links li:last-child{
+        border-bottom:none;
     }
 
     .nav-links a{
-        font-size:20px;
+        font-size:18px;
+        font-weight:500;
+        padding:18px 0;
+        width:100%;
         display:flex;
         align-items:center;
-        gap:16px;
+        gap:16px;          /* gap ON in mobile */
     }
 
-    /* FIX 1 (Critical): Show close button inside the mobile menu */
+    /* ── Nav icon: VISIBLE on mobile ── */
+    .nav-icon{
+        display:inline-block;
+        width:28px;
+        height:28px;
+        object-fit:contain;
+        flex-shrink:0;
+    }
+
+    /* Active link — icon turns blue via filter */
+    .nav-links .active .nav-icon{
+        filter: invert(30%) sepia(90%) saturate(600%) hue-rotate(210deg) brightness(95%);
+    }
+
+    /* Show mobile Contact Us button */
+    .mobile-contact-item{
+        display:block;
+        padding:20px 0 0;
+        border-bottom:none !important;
+    }
+
+    /* Close button */
     .close-btn{
         display:block;
         position:absolute;
         top:30px;
         right:30px;
         font-size:28px;
+        z-index:1000;
     }
 
 
@@ -554,7 +624,6 @@ body{
         line-height:1.8;
     }
 }
-
 
 
 /* SMALL MOBILE */
