@@ -1,0 +1,580 @@
+/* =========================
+   GLOBAL CSS
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:#f7f7fb;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    width:100%;
+    padding:14px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:100px;
+}
+
+/* FIX 2: Removed orphaned .logo h2 rule — no <h2> exists inside .logo in the HTML */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:42px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#111;
+    font-size:16px;
+    font-weight:500;
+}
+
+.nav-links .active{
+    color:#4d5ce3;
+}
+
+.contact-btn{
+    background:#4d5ce3;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.contact-btn img{
+    width:20px;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+    width:100%;
+    height:calc(100vh - 70px);
+    padding:10px 80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    overflow:hidden;
+}
+
+
+/* LEFT */
+
+.hero-left{
+    flex:1;
+}
+
+.hero-left h1{
+    font-size:52px;
+    line-height:1.1;
+    font-weight:800;
+    color:#111;
+}
+
+.blue-text{
+    color:#4d5ce3;
+    position:relative;
+    display:inline-block;
+}
+
+.underline{
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:100%;
+}
+
+.hero-left p{
+    margin-top:14px;
+    font-size:17px;
+    line-height:1.75;
+    color:#222;
+    max-width:600px;
+}
+
+
+/* FEATURES */
+
+.features{
+    margin-top:14px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.feature-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:16px;
+}
+
+.feature-item img{
+    width:24px;
+}
+
+
+/* BUTTONS */
+
+.hero-buttons{
+    margin-top:18px;
+    display:flex;
+    gap:16px;
+}
+
+.primary-btn{
+    background:#4d5ce3;
+    color:white;
+    border:none;
+    padding:14px 32px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.secondary-btn{
+    background:transparent;
+    color:#4d5ce3;
+    border:2px solid #4d5ce3;
+    padding:14px 32px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+
+/* RIGHT */
+
+.hero-right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image{
+    width:100%;
+    max-width:620px;
+    max-height:calc(100vh - 120px);
+    object-fit:contain;
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section{
+    width:100%;
+
+    /* FIX 4: Changed height to min-height so content is never clipped on short viewports */
+    min-height:100vh;
+
+    padding:40px 80px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+/* TOP */
+
+.about-top{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.about-heading{
+    flex:1;
+}
+
+.about-heading h2{
+    font-size:42px;
+    line-height:1.3;
+    font-weight:800;
+}
+
+.about-heading span{
+    color:#4d5ce3;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text p{
+    font-size:16px;
+    line-height:1.8;
+    color:#222;
+}
+
+
+/* BOTTOM */
+
+.about-bottom{
+    margin-top:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+
+/* IMAGE */
+
+.about-image{
+    flex:1;
+}
+
+.about-image img{
+    width:100%;
+    max-width:500px;
+    max-height:38vh;
+    object-fit:contain;
+}
+
+
+/* CARDS */
+
+.about-cards{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.info-card{
+    background:white;
+    border:1px solid #e6e6f2;
+    border-radius:12px;
+    padding:18px 22px;
+    transition:0.3s;
+}
+
+.info-card:hover{
+    transform:translateY(-4px);
+}
+
+.card-top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.card-top img{
+    width:28px;
+}
+
+.card-top h3{
+    font-size:22px;
+    font-weight:700;
+}
+
+.info-card p{
+    margin-top:10px;
+    font-size:15px;
+    line-height:1.7;
+    color:#333;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+.menu-btn img{
+    width:34px;
+}
+
+/* FIX 1 & 3: Styled close-btn as a proper button and hidden by default */
+.close-btn{
+    display:none;
+    background:none;
+    border:none;
+    font-size:24px;
+    cursor:pointer;
+    color:#111;
+    padding:0;
+    line-height:1;
+    align-self:flex-end;
+}
+
+
+/* TABLET */
+
+@media(max-width:992px){
+
+    .hero-section{
+        flex-direction:column;
+        text-align:center;
+
+        height:auto;
+        padding:40px 30px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .features{
+        align-items:center;
+    }
+
+    .about-section{
+        /* FIX 4: Consistent min-height at tablet breakpoint too */
+        min-height:auto;
+        padding:40px 30px;
+    }
+
+    .about-top,
+    .about-bottom{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-cards{
+        width:100%;
+    }
+
+    .hero-left h1{
+        font-size:42px;
+    }
+
+    .about-heading h2{
+        font-size:34px;
+    }
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    /* NAVBAR */
+
+    .navbar{
+        padding:20px;
+        position:relative;
+    }
+
+    .logo img{
+        width:120px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .contact-btn{
+        display:none;
+    }
+
+
+    /* MOBILE MENU */
+
+    .nav-links{
+        position:fixed;
+
+        top:0;
+        right:-100%;
+
+        width:100%;
+        height:100vh;
+
+        background:#f7f7fb;
+
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:flex-start;
+
+        padding:120px 40px;
+
+        gap:45px;
+
+        transition:0.4s;
+
+        z-index:999;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .nav-links li{
+        width:100%;
+    }
+
+    .nav-links a{
+        font-size:20px;
+        display:flex;
+        align-items:center;
+        gap:16px;
+    }
+
+    /* FIX 1 (Critical): Show close button inside the mobile menu */
+    .close-btn{
+        display:block;
+        position:absolute;
+        top:30px;
+        right:30px;
+        font-size:28px;
+    }
+
+
+    /* HERO */
+
+    .hero-section{
+        padding:20px;
+        gap:30px;
+    }
+
+    .hero-left h1{
+        font-size:32px;
+        line-height:1.2;
+    }
+
+    .hero-left p{
+        font-size:15px;
+        line-height:1.9;
+        margin-top:22px;
+    }
+
+    .features{
+        margin-top:22px;
+        align-items:flex-start;
+    }
+
+    .feature-item{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .feature-item img{
+        width:22px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        margin-top:26px;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+        font-size:16px;
+        padding:16px;
+    }
+
+    .hero-image{
+        max-width:100%;
+    }
+
+
+    /* ABOUT */
+
+    .about-section{
+        padding:20px;
+    }
+
+    .about-heading h2{
+        font-size:30px;
+        line-height:1.4;
+    }
+
+    .about-text p{
+        font-size:15px;
+        line-height:1.9;
+        margin-top:12px;
+    }
+
+    .about-image img{
+        max-width:100%;
+    }
+
+    .about-cards{
+        gap:18px;
+    }
+
+    .info-card{
+        padding:22px 18px;
+    }
+
+    .card-top h3{
+        font-size:18px;
+    }
+
+    .info-card p{
+        font-size:15px;
+        line-height:1.8;
+    }
+}
+
+
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+    .hero-left h1{
+        font-size:26px;
+    }
+
+    .about-heading h2{
+        font-size:24px;
+    }
+
+    .hero-left p,
+    .about-text p{
+        font-size:14px;
+    }
+
+    .feature-item{
+        font-size:14px;
+    }
+}
